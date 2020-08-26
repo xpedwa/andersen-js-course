@@ -16,9 +16,8 @@
  */
 
 function any(arr, cb) {
-  if (cb) return this;
-  return arr;
+  if (cb) return Boolean(arr.find(cb));
+  return Boolean(arr.find(x => x == true));
 }
 
-// any([1, 2]);
 export default any;

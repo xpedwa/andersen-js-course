@@ -17,7 +17,7 @@
 
 function any(arr, cb) {
   if (cb) return Boolean(arr.find(cb));
-  return Boolean(arr.find(x => x == true));
+  return Boolean(arr.find(x => !!x));
 }
 
 export default any;

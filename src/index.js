@@ -21,6 +21,11 @@ import arrayTask2 from './array-practice/task2';
 import arrayTask3 from './array-practice/task3';
 import arrayTask4 from './array-practice/task4';
 import arrayTask5 from './array-practice/task5';
+import arrayTask6 from './array-practice/task6';
+import arrayTask7 from './array-practice/task7';
+import arrayTask8 from './array-practice/task8';
+import arrayTask9 from './array-practice/task9';
+import arrayTask10 from './array-practice/task10';
 
 import { task1Old, task1New } from './es-features/task1';
 import { task2Old, task2New } from './es-features/task2';
@@ -61,15 +66,48 @@ console.log('arrayTask4', arrayTask4([5, 1, 3, 3, 4], [1, 3, 4]));
 console.log('=============');
 
 const generator = arrayTask5([1, '6', 3, 2]);
-generator.next();
-generator.next();
-generator.next();
-generator.next();
-generator.next();
-generator.next();
+console.log('arrayTask5', generator.next());
+console.log('arrayTask5', generator.next());
+console.log('arrayTask5', generator.next());
+console.log('arrayTask5', generator.next());
+console.log('arrayTask5', generator.next());
+console.log('arrayTask5', generator.next());
+
+console.log('=============');
+
+console.log('arrayTask6', arrayTask6([10, 20, 30], (acc, item) => acc + item));
+console.log('arrayTask6', arrayTask6([10, 20, 30], (acc, item) => acc + item, 10));
+console.log('arrayTask6', arrayTask6([10, 20, 30], (acc, item) => acc * item));
+console.log('arrayTask6', arrayTask6([10, 20, 30], (acc, item) => acc * item, 1));
+console.log('arrayTask6', arrayTask6([10, 20, 30], (acc, item) => acc - item));
+
+console.log('=============');
+
+console.log('arrayTask7', arrayTask7([1, 2, 3], 5));
+console.log('arrayTask7', arrayTask7([1, 2, 3], 2));
+
+console.log('=============');
+
+console.log('arrayTask8', arrayTask8([2, 1, 2, 3], 1, 2));
+console.log('arrayTask8', arrayTask8([2, 1, 10, 20], 1, 2));
+
+console.log('=============');
+
+console.log('arrayTask9', arrayTask9([1, 2, 3, 1, 2, 3], 1));
+console.log('arrayTask9', arrayTask9([1, 2, 3], 4));
+
+console.log('=============');
+const meetups = [
+  { name: 'JavaScript', isActive: true, members: 100 },
+  { name: 'Angular', isActive: true, members: 900 },
+  { name: 'Node', isActive: false, members: 600 },
+  { name: 'React', isActive: true, members: 500 },
+];
+console.log('arrayTask10', arrayTask10(meetups));
 
 console.log('=============');
 // ===============================================================================================
+console.log('=============');
 
 console.log('task1 old', task1Old(10) === 500); // true
 console.log('task1 new', task1New(10) === 500); // true

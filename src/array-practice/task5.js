@@ -19,8 +19,8 @@
 const createGenerator = arr => {
   let i = 0;
   function next() {
-    if (i < arr.length) console.log('arrayTask5', arr[i++]);
-    else console.log('arrayTask5', 'Complete');
+    if (i < arr.length) return arr[i++];
+    else return 'Complete';
   }
 
   return { next };

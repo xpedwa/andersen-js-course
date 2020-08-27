@@ -19,5 +19,5 @@ export function task11Old(obj, fieldName) {
 // При желании, можете использовать стрелочную функцию, вместо обычной
 
 export function task11New(obj, fieldName) {
-  return obj[fieldName];
+  return (fieldName in obj) && (obj[fieldName] != null)  ? obj[fieldName] : false;
 }

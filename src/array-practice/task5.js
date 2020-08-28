@@ -15,3 +15,15 @@
  * generator.next(); -> 'Complete!'
  * generator.next(); -> 'Complete!'
  */
+
+const createGenerator = arr => {
+  let i = 0;
+  function next() {
+    if (i < arr.length) return arr[i++];
+    else return 'Complete';
+  }
+
+  return { next };
+};
+
+export default createGenerator;

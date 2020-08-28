@@ -14,3 +14,10 @@
  * console.log(any([0, 0, 1, 0])); -> true
  * console.log(any([0, 0, 0, 0])); -> false
  */
+
+function any(arr, cb) {
+  if (cb) return Boolean(arr.find(cb));
+  return Boolean(arr.find(x => !!x));
+}
+
+export default any;

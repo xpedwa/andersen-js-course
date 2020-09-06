@@ -1,28 +1,42 @@
 class Controller {
-  constructor(model, view) {
+  constructor(model, barnView, recipesView) {
     this.model = model;
-    this.view = view;
+    this.barnView = barnView;
+    this.recipesView = recipesView;
 
-    this.view.on('addItemToBarn', this.addItemToBarn.bind(this));
-    this.view.on('remItemFromBarn', this.remItemFromBarn.bind(this));
+    this.barnView.on('addItemToBarn', this.addItemToBarn.bind(this));
+    this.barnView.on('remItemFromBarn', this.remItemFromBarn.bind(this));
 
-    this.view.show(this.model.state);
+    this.recipesView.on('addItemToRecipes', this.addItemToRecipes.bind(this));
+
+    this.barnView.show(this.model.state.barn);
+    this.recipesView.show(this.model.state.recipes);
   }
 
   addItemToBarn({ name, img }) {
-    this.model.addItemToState({
+    this.model.addBarnItemToState({
       name,
       img,
       count: 1,
     });
 
-    this.view.show(this.model.state);
+    this.barnView.show(this.model.state.barn);
   }
 
   remItemFromBarn(element) {
-    const newState = this.model.remItemFromState(element);
+    const newState = this.model.remBarnItemFromState(element);
 
-    this.view.show(newState);
+    this.barnView.show(newState);
+  }
+
+  addItemToRecipes({ name, img }) {
+    console.log('contr');
+    this.model.addRecipesItemToState({
+      name,
+      img,
+      ingredients: [],
+    });
+    this.recipesView.show(this.model.state.recipes);
   }
 }
 

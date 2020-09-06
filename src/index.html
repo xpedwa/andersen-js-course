@@ -13,10 +13,10 @@
 
     <div id="main">
       <div id="barn" class="collection"> 
-        <div class="content"></div>
-
+        <div>Barn</div>
         <hr/>
-
+        <div class="content"></div>
+        <hr/>
         <form id="addItemToBarnForm" name="addItemToBarnForm">
           <span>Name:</span>
           <input name="name" type="text" required>
@@ -26,13 +26,22 @@
         </form>
       </div>
 
-      <div id="craft">craft place</div>
+      <div id="craft" ondrop="drop(event)" ondragover="allowDrop(event)">craft place</div>
 
       <div id="recipes" class="collection"> 
+        <div>Recipes</div>
+        <hr/>
         <div class="content"></div>
-        <button id="addItemToRecipes">add</button>
+        <hr/>
+        <form id="addItemToRecipesForm" name="addItemToRecipesForm">
+          <span>Name:</span>
+          <input name="name" type="text" required>
+
+          <input name="img" type="file" accept="image/*">
+          <button>add new item to a recipes</button>
+        </form>
       </div>
     </div>
-    
+
   </body>
 </html>

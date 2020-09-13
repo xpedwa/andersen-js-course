@@ -1,7 +1,7 @@
 import './styles/main.css';
-import { Barn, Recipes } from './view';
-import Controller from './controller';
-import { Model } from './model';
+import { View } from './View';
+import Controller from './Controller';
+import { Model } from './Model';
 
 function loadState() {
   const string = localStorage.getItem('app');
@@ -18,6 +18,5 @@ function saveState(data) {
 const model = new Model(loadState());
 model.on('change', saveState);
 
-const barnView = new Barn();
-const recipesView = new Recipes();
-const controller = new Controller(model, barnView, recipesView);
+const view = new View();
+const controller = new Controller(model, view);

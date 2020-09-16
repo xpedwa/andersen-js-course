@@ -18,6 +18,12 @@ class View extends EventEmitter {
     this.recipesPanel.addEventListener('drop', ev => this.moveElement(ev));
     this.recipesElements = new Element(this.recipesPanel, this.addElement.bind(this));
 
+    this.ingredientsPanel = document.querySelector('#ingredients');
+    this.ingredientsPanel.addEventListener('dragover', dragover);
+    this.ingredientsPanel.addEventListener('dragleave', dragleave);
+    this.ingredientsPanel.addEventListener('drop', ev => this.moveElement(ev));
+    this.ingredientElement = new Element(this.ingredientsPanel, this.addElement.bind(this));
+
     this.craftPanel = document.querySelector('#craft');
     this.craftPanel.addEventListener('dragover', dragover);
     this.craftPanel.addEventListener('dragleave', dragleave);
@@ -26,17 +32,22 @@ class View extends EventEmitter {
   }
 
   init(state) {
-    this.barnPanel.querySelector('.content').innerHTML = '';
+    this.barnPanel.innerHTML = '';
     state.barn.forEach(element => {
       this.barnElements.add(element);
     });
 
-    this.recipesPanel.querySelector('.content').innerHTML = '';
+    this.recipesPanel.innerHTML = '';
     state.recipes.forEach(element => {
       this.recipesElements.add(element);
     });
 
-    this.craftPanel.querySelector('.content').innerHTML = '';
+    this.ingredientsPanel.innerHTML = '';
+    state.ingredients.forEach(element => {
+      this.ingredientElement.add(element);
+    });
+
+    this.craftPanel.innerHTML = '';
     state.craft.forEach(element => {
       this.craftElements.add(element);
     });
@@ -53,6 +64,7 @@ class View extends EventEmitter {
   moveElement(ev) {
     const { panel, name } = JSON.parse(ev.dataTransfer.getData('obj'));
     const target = ev.target.id;
+    console.log(panel);
     this.emit('moveElement', { panel, name, target });
   }
 }

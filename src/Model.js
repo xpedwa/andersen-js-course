@@ -6,6 +6,7 @@ class Model extends EventEmitter {
     this.state = state;
     this.state.barn = this.state.barn || [];
     this.state.recipes = this.state.recipes || [];
+    this.state.ingredients = this.state.ingredients || [];
     this.state.craft = this.state.craft || [];
   }
 

@@ -3,7 +3,7 @@ import { dragstart, drag, dragend } from './dragNdrop';
 class Element {
   constructor(panel, callback) {
     this.panel = panel;
-    this.form = panel.querySelector('form') || undefined;
+    this.form = document.querySelector(`#form_${panel.id}`) || undefined;
 
     if (this.form)
       this.form.addEventListener('submit', e => {
@@ -38,7 +38,7 @@ class Element {
     this.element.addEventListener('dragstart', dragstart);
     this.element.addEventListener('dragend', dragend);
 
-    this.panel.querySelector('.content').appendChild(this.element);
+    this.panel.appendChild(this.element);
   }
 
   remove() {

@@ -6,52 +6,84 @@ body {
 h1 {
   text-align: center;
 }
+h5 {
+  margin: 10px 0;
+}
 hr {
   color: white;
 }
+button {
+  border-radius: 10px;
+  border: none;
+  padding: 5px 10px;
+  margin: 15px;
+  background: #FFCA28;
+  cursor: pointer;
+}
+input {
+  border-radius: 10px;
+  border: none;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+
+.form{
+  padding: 10px 0;
+  font-size: 13px;
+  background: #E0E0E0;
+  border-radius: 0 0 20px 20px;
+}
+
 
 #main {
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   margin: 10px;
-  min-height: 50vh;
+  height: 90vh;
   align-self: center;
 
 }
 
 .collection {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  margin: 15px;
 
   background-color: #e8e8e8;
-  
   border-radius: 20px; 
-  padding: 5px;
   text-align: center;
 }
-  .collection .content {
+  .content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+	  min-height: 50px;
     padding: 5px;
+    align-content: center;
+    background: #ffffff99;
+    margin: 10px 15px !important;
+    border-radius: 10px;
   }
 
-  .collection form * {
-    margin: 5px;
-  }
 
-#craft {
-  width: 80%;
-  height: 80%;
+	#craft__recipe__place {
+		margin: 0 auto;
+    background: #FFCA28;
+    margin: 0 auto !important;
+    border-radius: 100px;
+    
+			width: 100px;
+			height: 100px;
+	}
+		#craft__recipe__place .item {
+			width: 100px;
+			height: 100px;
+		}
+	#craft__result {
+		background: #eeeeee;
+	}
 
-  background-color: #e8e8e8;
-  border-radius: 100rem;
-  align-self: center;
-  margin: 5px auto;
-  text-align: center;
-  vertical-align: middle;
-}
   .dragOver {
     background-color: royalblue !important;
     opacity: 0.7;
@@ -65,8 +97,7 @@ hr {
   border-radius: 5rem;
   text-align: center;
   line-height: 50px;
-  /* color: transparent; */
-
+  
   background-color: yellow;
   background-position: center;
   background-size: contain;

@@ -12,36 +12,45 @@
     </h1>
 
     <div id="main">
-      <div id="barn" class="collection"> 
-        <div>Barn</div>
-        <hr/>
-        <div class="content"></div>
-        <hr/>
-        <form id="addItemToBarnForm" name="addItemToBarnForm">
-          <span>Name:</span>
-          <input name="name" type="text" required>
+      <div class="collection"> 
+        <h5>Barn</h5>
 
+        <div id="barn" class="content"></div>
+
+        <form id="form_barn" name="addItemToBarnForm" class="form">
+          <input name="name" type="text" required  placeholder="Element name">
           <input name="img" type="file" accept="image/*">
-          <button>add new item to a Barn</button>
+          <button>Create new Barn element</button>
         </form>
       </div>
 
-      <div id="craft" class="collection">
-        craft place
-        <div class="content"></div>
+      <div class="collection">
+        <h5>Craft</h5>
+
+        <div>
+          <div id="craft__recipe__place" class="content"></div>
+          
+          <div id="craft" class="content"></div>
+
+          <div id="craft__result" class="content"></div>
+        </div>
+
+        <div class="form">
+          <button>Crafting</button>
+          <button>Default</button>
+        </div>
       </div>
 
-      <div id="recipes" class="collection"> 
-        <div>Recipes</div>
-        <hr/>
-        <div class="content"></div>
-        <hr/>
-        <form id="addItemToRecipesForm" name="addItemToRecipesForm">
-          <span>Name:</span>
-          <input name="name" type="text" required>
+      <div class="collection"> 
+        <h5>Recipes</h5>
 
+        <div id="recipes" class="content"></div>
+
+        <form id="form_recipes" name="addItemToRecipesForm" class="form">
+          <input name="name" type="text" required placeholder="Recipes name">
+          <div id="ingredients" class="content"></div>
           <input name="img" type="file" accept="image/*">
-          <button>add new item to a recipes</button>
+          <button>Create new Recipes element</button>
         </form>
       </div>
     </div>

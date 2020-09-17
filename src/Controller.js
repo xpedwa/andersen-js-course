@@ -11,6 +11,7 @@ class Controller {
 
     this.view.on('craft', this.craft.bind(this));
     this.view.on('default', this.default.bind(this));
+    this.view.on('saveStateToFile', this.saveStateToFile.bind(this));
 
     this.view.init(this.model.state);
   }
@@ -97,7 +98,27 @@ class Controller {
   }
 
   default() {
-    console.log('default');
+    const defaultBtn = document.querySelector('#defaultBtn');
+    const file = defaultBtn.files[0];
+    const reader = new FileReader();
+    reader.readAsText(file);
+    reader.onloadend = () => {
+      this.model.default(JSON.parse(reader.result));
+      console.log(this.model.state);
+      this.view.init(this.model.state);
+    };
+  }
+
+  saveStateToFile() {
+    console.log(this);
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(
+      new Blob([JSON.stringify(this.model.saveToFile())], { type: 'text/plain' })
+    );
+    a.setAttribute('download', 'default.json');
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
   }
 }
 

@@ -56,10 +56,16 @@ class Model extends EventEmitter {
 
   clean(panel) {
     this.state[panel] = [];
+    this.emit('change', this.state);
   }
 
-  default() {
-    console.log();
+  default(defaultValue) {
+    this.state = defaultValue;
+    this.emit('change', this.state);
+  }
+
+  saveToFile() {
+    return this.state;
   }
 }
 

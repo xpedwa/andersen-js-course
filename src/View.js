@@ -49,7 +49,10 @@ class View extends EventEmitter {
     craftBtn.addEventListener('click', this.craft.bind(this));
 
     const defaultBtn = document.querySelector('#defaultBtn');
-    defaultBtn.addEventListener('click', this.default.bind(this));
+    defaultBtn.addEventListener('change', this.default.bind(this));
+
+    const saveBtn = document.querySelector('#saveBtn');
+    saveBtn.addEventListener('click', this.saveStateToFile.bind(this));
   }
 
   init(state) {
@@ -121,6 +124,10 @@ class View extends EventEmitter {
 
   default() {
     this.emit('default');
+  }
+
+  saveStateToFile() {
+    this.emit('saveStateToFile');
   }
 }
 

@@ -1,6 +1,6 @@
 import { EventEmitter } from './EventEmitter';
 import { Element } from './Element';
-import { dragenter, dragover, dragleave, drop } from './dragNdrop';
+import { dragover, dragleave } from './dragNdrop';
 
 class View extends EventEmitter {
   constructor() {
@@ -92,6 +92,9 @@ class View extends EventEmitter {
   }
 
   moveElement(ev) {
+    ev.preventDefault();
+    ev.target.classList.remove('dragOver');
+
     const { panel, name } = JSON.parse(ev.dataTransfer.getData('obj'));
     const target = ev.target.id;
     this.emit('moveElement', { panel, name, target });
@@ -103,6 +106,9 @@ class View extends EventEmitter {
   }
 
   moveRecipe(ev) {
+    ev.preventDefault();
+    ev.target.classList.remove('dragOver');
+
     const { panel, name } = JSON.parse(ev.dataTransfer.getData('obj'));
     const target = ev.target.id;
     this.emit('moveRecipe', { panel, name, target });

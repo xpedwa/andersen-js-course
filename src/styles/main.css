@@ -9,9 +9,6 @@ h1 {
 h5 {
   margin: 10px 0;
 }
-hr {
-  color: white;
-}
 button {
   border-radius: 10px;
   border: none;
@@ -44,27 +41,28 @@ input {
   align-self: center;
 
 }
+  .collection {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    margin: 15px;
 
-.collection {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  margin: 15px;
-
-  background-color: #e8e8e8;
-  border-radius: 20px; 
-  text-align: center;
-}
-  .content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-	  min-height: 50px;
-    padding: 5px;
-    align-content: center;
-    background: #ffffff99;
-    margin: 10px 15px !important;
-    border-radius: 10px;
+    background-color: #e8e8e8;
+    border-radius: 20px; 
+    text-align: center;
   }
+
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  min-height: 50px;
+  padding: 5px;
+  align-content: center;
+  background: #ffffff99;
+  margin: 10px 15px !important;
+  border-radius: 10px;
+}
 
 
 	#craftRecipe {
@@ -79,15 +77,16 @@ input {
 		#craftRecipe .item {
 			width: 100px;
 			height: 100px;
-		}
-	#result {
-		background: #eeeeee;
-	}
-
-  .dragOver {
-    background-color: royalblue !important;
-    opacity: 0.7;
+    }
+    
+  #craft {
+    min-height: 200px;
   }
+
+	#result {
+    background: #eeeeee;
+    min-height: 200px;
+	}
 
 .item {
   width: 50px;
@@ -96,6 +95,8 @@ input {
   text-align: center;
   line-height: 50px;
   
+  font-size: 20px;
+  font-weight: bold;
   background-color: yellow;
   background-position: center;
   background-size: contain;
@@ -104,7 +105,12 @@ input {
     opacity: 0.7;
     color: red;
   }
-  .drag{
-    opacity: 0.7;
-    cursor: move;
-  }
+
+.drag{
+  opacity: 0.7;
+  cursor: move;
+}
+.dragOver {
+  background-color: royalblue !important;
+  opacity: 0.7;
+}

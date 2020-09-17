@@ -1,4 +1,4 @@
-import { dragstart, drag, dragend } from './dragNdrop';
+import { dragstart, dragend } from './dragNdrop';
 
 class Element {
   constructor(panel, callback) {
@@ -33,7 +33,7 @@ class Element {
     this.element.setAttribute('style', `background-image: url(${img})`);
     this.element.appendChild(document.createTextNode(count || ''));
     this.element.setAttribute('name', name);
-    this.element.setAttribute('id', name);
+    this.element.setAttribute('title', name);
     this.element.setAttribute('draggable', 'true');
     this.element.addEventListener('dragstart', dragstart);
     this.element.addEventListener('dragend', dragend);

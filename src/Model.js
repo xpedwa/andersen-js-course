@@ -57,6 +57,10 @@ class Model extends EventEmitter {
   clean(panel) {
     this.state[panel] = [];
   }
+
+  default() {
+    console.log();
+  }
 }
 
 export { Model };

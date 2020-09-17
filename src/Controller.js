@@ -60,24 +60,27 @@ class Controller {
     const recipeIngr = recipe.ingredients;
     const ingredients = this.model.get('craft');
 
-    if (recipeIngr.length === ingredients.length) {
-      console.log('length OK');
-
+    function compare() {
+      let like = true;
       // eslint-disable-next-line no-plusplus
       for (let i = 0; i < recipeIngr.length; i++) {
-        const compare = ingredients.some(
+        const findTrue = ingredients.some(
           ingredientElement =>
             ingredientElement.name === recipeIngr[i].name &&
             ingredientElement.count === recipeIngr[i].count
         );
-
-        console.log(compare);
-        if (!compare) {
-          alert('not like');
+        if (!findTrue) {
+          like = findTrue;
           break;
         }
       }
+      return like;
+    }
+
+    if (recipeIngr.length === ingredients.length && compare()) {
       this.addElement({ panel: 'result', element: { name: recipe.name, img: recipe.img } });
+      this.model.clean('craft');
+      this.view.init(this.model.state);
     } else {
       alert('not like');
     }

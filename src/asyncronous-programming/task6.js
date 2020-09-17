@@ -5,10 +5,7 @@ function getResolvedPromise(value) {
 
 getResolvedPromise(500)
   .then(value => {
-    try {
-      if (value > 300) throw new Error('Ошибка');
-    } catch (err) {
-      console.log(err);
-    }
+    if (value > 300) {throw new Error('Ошибка')};
   })
+  .catch(err => console.log(err.message))
   .finally(() => console.log('This is Finally!'));

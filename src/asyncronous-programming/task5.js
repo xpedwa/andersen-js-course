@@ -21,11 +21,9 @@ function getArrayFromURL() {
   function sequence() {
     console.log('sequence:');
     const sequenceArr = [];
-    urls.forEach(element => {
-      fetch(element)
-        .then(res => res.json())
-        .then(data => sequenceArr.push(data));
-    });
+
+    urls.reduce((acc, element) => acc.then(() => fetch(element).then(res => res.json())), Promise.resolve())
+	  .then(data => sequenceArr.push(data));
     console.log(sequenceArr);
   }
   sequence();

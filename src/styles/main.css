@@ -67,7 +67,7 @@ input {
   }
 
 
-	#craft__recipe__place {
+	#craftRecipe {
 		margin: 0 auto;
     background: #FFCA28;
     margin: 0 auto !important;
@@ -76,11 +76,11 @@ input {
 			width: 100px;
 			height: 100px;
 	}
-		#craft__recipe__place .item {
+		#craftRecipe .item {
 			width: 100px;
 			height: 100px;
 		}
-	#craft__result {
+	#result {
 		background: #eeeeee;
 	}
 
@@ -92,8 +92,6 @@ input {
 .item {
   width: 50px;
   height: 50px;
-  margin: 3px;
-  padding: 3px;
   border-radius: 5rem;
   text-align: center;
   line-height: 50px;

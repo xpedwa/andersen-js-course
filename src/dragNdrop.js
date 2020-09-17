@@ -1,7 +1,7 @@
 // on element
 function dragstart(ev) {
   ev.target.classList.add('drag');
-  console.log(ev);
+  // console.log(ev);
   const panel = ev.target.parentNode.id;
   const name = ev.target.attributes.name.value;
   ev.dataTransfer.setData('obj', JSON.stringify({ panel, name }));

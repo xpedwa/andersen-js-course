@@ -83,7 +83,7 @@ class Controller {
       this.model.clean('craft');
       this.view.init(this.model.state);
     } else {
-      alert('not like');
+      alert('Try new combination!');
     }
   }
 
@@ -98,19 +98,16 @@ class Controller {
   }
 
   default() {
-    const defaultBtn = document.querySelector('#defaultBtn');
-    const file = defaultBtn.files[0];
+    const file = document.querySelector('#defaultBtn').files[0];
     const reader = new FileReader();
     reader.readAsText(file);
     reader.onloadend = () => {
       this.model.default(JSON.parse(reader.result));
-      console.log(this.model.state);
       this.view.init(this.model.state);
     };
   }
 
   saveStateToFile() {
-    console.log(this);
     const a = document.createElement('a');
     a.href = URL.createObjectURL(
       new Blob([JSON.stringify(this.model.saveToFile())], { type: 'text/plain' })

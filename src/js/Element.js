@@ -40,10 +40,6 @@ class Element {
 
     this.panel.appendChild(this.element);
   }
-
-  remove() {
-    console.log(this);
-  }
 }
 
 export { Element };

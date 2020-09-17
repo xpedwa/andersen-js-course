@@ -1,7 +1,7 @@
 import './styles/main.css';
-import { View } from './View';
-import Controller from './Controller';
-import { Model } from './Model';
+import { View } from './js/View';
+import Controller from './js/Controller';
+import { Model } from './js/Model';
 
 function loadState() {
   const string = localStorage.getItem('app');

@@ -10,22 +10,27 @@ function getArrayFromURL() {
   ];
 
   function parallel() {
-    console.log('parallel:');
-
-    Promise.all(urls.map(url => fetch(url).then(res => res.json()))).then(data =>
-      console.log(data)
-    );
+    Promise.all(urls.map(url => fetch(url)
+			.then(res => res.json()))
+    ).then(data => console.log('parallel:', data));
   }
   parallel();
 
   function sequence() {
-    console.log('sequence:');
     const sequenceArr = [];
 
-    urls.reduce((acc, element) => acc.then(() => fetch(element).then(res => res.json())), Promise.resolve())
-	  .then(data => sequenceArr.push(data));
-    console.log(sequenceArr);
+    urls.reduce(
+      (acc, element) => acc.then(
+        () => fetch(element)
+          .then(res => res.json())
+          .then(data => sequenceArr.push(data))
+      ), Promise.resolve()
+    ).then(() => console.log('sequence:', sequenceArr));
+
+    
+		
   }
   sequence();
 }
 getArrayFromURL();
+

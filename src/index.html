@@ -10,5 +10,52 @@
     <h1>
       Andersen JS Course
     </h1>
+
+    <div id="main">
+      <div class="collection"> 
+        <h5>Barn</h5>
+
+        <div id="barn" class="content"></div>
+
+        <form id="form_barn" name="addItemToBarnForm" class="form">
+          <input name="name" type="text" required  placeholder="Element name">
+          <input name="img" type="file" accept="image/*">
+          <button>Create new Barn element</button>
+        </form>
+      </div>
+
+      <div class="collection">
+        <h5>Craft</h5>
+
+        <div>
+          <div id="craftRecipe" class="content"></div>
+          
+          <div id="craft" class="content"></div>
+
+          <div id="result" class="content"></div>
+        </div>
+
+        <div class="form">
+          <button id="craftBtn">Crafting</button>
+          <button id="saveBtn">Save</button>
+          <br>
+          <input type="file" id="defaultBtn"/>
+        </div>
+      </div>
+
+      <div class="collection"> 
+        <h5>Recipes</h5>
+
+        <div id="recipes" class="content"></div>
+
+        <form id="form_recipes" name="addItemToRecipesForm" class="form">
+          <input name="name" type="text" required placeholder="Recipes name">
+          <div id="ingredients" class="content"></div>
+          <input name="img" type="file" accept="image/*">
+          <button>Create new Recipes element</button>
+        </form>
+      </div>
+    </div>
+
   </body>
 </html>
